@@ -1,17 +1,31 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
+import { generateClassicUsername } from "./themes/classic";
+import { generateEmotionalUsername } from "./themes/emotional";
+import { generateElementalUsername } from "./themes/elemental";
+import { generateTechUsername } from "./themes/tech";
+import { Options } from "./types/types";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>   
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+export function generateUsername({ theme, separator = false }: Options): {
+  username: string;
+} {
+  let username = "";
+  switch (theme) {
+    case "classic":
+      username = generateClassicUsername();
+      break;
+    case "emotional":
+      username = generateEmotionalUsername();
+      break;
+    case "elemental":
+      username = generateElementalUsername();
+      break;
+    case "tech":
+      username = generateTechUsername();
+      break;
+    default:
+      username = generateClassicUsername();
+  }
+  if (separator) {
+    username = username.replace(/([A-Z])/g, "_" + "$1").slice(1);
+  }
+  return { username };
+}
