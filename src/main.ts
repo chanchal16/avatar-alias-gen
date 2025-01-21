@@ -3,10 +3,12 @@ import { generateEmotionalUsername } from "./themes/emotional";
 import { generateElementalUsername } from "./themes/elemental";
 import { generateTechUsername } from "./themes/tech";
 import { Options } from "./types/types";
+import { generateAvatar } from "./utils/avatar";
 
-export function generateUsername({ theme, separator = false }: Options): {
-  username: string;
-} {
+export async function generateUsernameAndAvatar({
+  theme,
+  separator = false,
+}: Options): Promise<{ username: string; avatar: string }> {
   let username = "";
   switch (theme) {
     case "classic":
@@ -27,5 +29,8 @@ export function generateUsername({ theme, separator = false }: Options): {
   if (separator) {
     username = username.replace(/([A-Z])/g, "_" + "$1").slice(1);
   }
-  return { username };
+
+  // Generate avatar based on the theme and username
+  const avatar = await generateAvatar(theme, username);
+  return { username, avatar };
 }
