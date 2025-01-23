@@ -1,8 +1,24 @@
 {
   "name": "randomize-it",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
+  "description": "A random username and avatar generator with multiple themes.",
+  "keywords": [
+    "username",
+    "avatar",
+    "generator",
+    "dicebear",
+    "vite"
+  ],
+  "author": "Chanchal Rajput",
+  "main": "dist/randomize-it.umd.js",
+  "module": "dist/randomize-it.es.js",
+  "types": "dist/main.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,12 +26,19 @@
     "test": "vitest",
     "test:ui": "vitest --ui"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chanchal16/randomize-it"
+  },
+  "homepage": "https://github.com/chanchal16/randomize-it#readme",
   "devDependencies": {
     "@types/node": "^22.10.7",
     "@vitest/ui": "^3.0.3",
     "jsdom": "^26.0.0",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0",
     "vitest": "^3.0.3"
   }
 }
