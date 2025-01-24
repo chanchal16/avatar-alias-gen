@@ -4,5 +4,5 @@ export const generateElementalUsername = (): string => {
   const color = getRandomWord("colors");
   const verb = getRandomWord("verbs");
   const element = getRandomWord("elements");
-  return `${color}${element}${verb}`.toLowerCase();
+  return `${color}${element}${verb}`;
 };

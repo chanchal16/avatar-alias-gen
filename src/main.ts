@@ -27,8 +27,10 @@ export async function generateUsernameAndAvatar({
       username = generateClassicUsername();
   }
   if (separator) {
-    username = username.replace(/([A-Z])/g, "_" + "$1").slice(1);
+    username = username.replace(/([A-Z])/g, "_$1").toLowerCase();
   }
+
+  username = username.toLowerCase();
 
   // Generate avatar based on the theme and username
   const avatar = await generateAvatar(theme, username);

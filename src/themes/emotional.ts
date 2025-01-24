@@ -4,5 +4,5 @@ export const generateEmotionalUsername = (): string => {
   const emotion = getRandomWord("emotions");
   const verb = getRandomWord("verbs");
   const element = getRandomWord("elements");
-  return `${emotion}${verb}${element}`.toLowerCase();
+  return `${emotion}${verb}${element}`;
 };
