@@ -2,6 +2,10 @@
 A lightweight library for generating random usernames and avatars, inspired by Reddit-style naming conventions. This library is customizable, supports multiple themes, and includes avatar generation using the DiceBear API.
 
 ### Demo
+<a href="https://randomize-it.vercel.app/" target="_blank">View Demo</a>
+
+### NPM Package
+<a href="https://www.npmjs.com/package/randomize-it-js" target="_blank">View on NPM</a>
 
 ## Features
 - Random Username Generation: Create unique usernames with customizable themes.
@@ -21,7 +25,7 @@ npm i randomize-it
 ## Usage
 ### Basic example
 ```javascript
-import { generateUsernameAndAvatar } from 'randomize-it-js';
+import { generateUsernameAndAvatar, generateAvatar } from 'randomize-it-js';
 
 async function generateUser() {
   const { username, avatar } = await generateUsernameAndAvatar("classic");
@@ -29,6 +33,11 @@ async function generateUser() {
   console.log("Avatar URL:", avatar);
 }
 generateUser();
+
+// Using generateAvatar to generate only avatar
+generateAvatar("classic", "test_username").then((avatar) => {
+  console.log("Avatar URL:", avatar);
+});
 
 ```
 
