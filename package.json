@@ -1,14 +1,14 @@
 {
   "name": "randomize-it",
   "private": false,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A random username and avatar generator with multiple themes.",
   "keywords": [
     "username",
     "avatar",
     "generator",
-    "dicebear",
-    "vite"
+    "library",
+    "random"
   ],
   "author": "Chanchal Rajput",
   "main": "dist/randomize-it.umd.js",
