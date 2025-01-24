@@ -2,23 +2,30 @@ import { useState } from "react";
 import "./App.css";
 import Notify from "simple-notify";
 import "simple-notify/dist/simple-notify.css";
+import { generateUsernameAndAvatar } from "randomize-it-js";
+
+type Theme = "classic" | "emotional" | "elemental" | "tech";
 
 const themes = ["classic", "emotional", "elemental", "tech"];
 
 function App() {
-  const [theme, setTheme] = useState("classic");
+  const [theme, setTheme] = useState<Theme>("classic");
   const [result, setResult] = useState<{
     username: string;
     avatar: string;
   } | null>({
-    username: "earthemeralddwell",
-    avatar: "https://api.dicebear.com/9.x/glass/svg?seed=earthemeralddwell",
+    username: "generated username",
+    avatar:
+      "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg",
   });
-
-  // const generate = async () => {
-  //   const data = await generateUsernameAndAvatar(theme);
-  //   setResult(data);
-  // };
+  const [separatorEnable, setSeparatorEnable] = useState<boolean>(false);
+  const generate = async () => {
+    const data = await generateUsernameAndAvatar({
+      theme,
+      separator: separatorEnable,
+    });
+    setResult(data);
+  };
 
   async function copyToClipboard(text: string) {
     try {
@@ -54,7 +61,7 @@ function App() {
             id="themes"
             className="select-item"
             value={theme}
-            onChange={(e) => setTheme(e.target.value)}
+            onChange={(e) => setTheme(e.target.value as Theme)}
           >
             {themes.map((t) => (
               <option key={t} value={t}>
@@ -62,10 +69,16 @@ function App() {
               </option>
             ))}
           </select>
-          <button
-            className="button"
-            // onClick={generate}
-          >
+          <div style={{ marginTop: "1rem" }}>
+            <label htmlFor="separator">Add Separator</label>
+            <input
+              id="separator"
+              type="checkbox"
+              checked={separatorEnable}
+              onChange={() => setSeparatorEnable(!separatorEnable)}
+            />
+          </div>
+          <button className="button" onClick={generate}>
             Generate
           </button>
         </div>
@@ -74,7 +87,13 @@ function App() {
           <div className="border">
             <h2 className="text-xl font-semibold">Generated Username:</h2>
             <div className="username-box">
-              <p className="text-lg">{result.username}</p>
+              <p
+                className={`text-lg ${
+                  result.username === "generated username" && "placeholder"
+                }`}
+              >
+                {result.username}
+              </p>
               <button
                 className="copy-btn"
                 onClick={() => copyToClipboard(result.username)}
