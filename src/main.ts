@@ -36,3 +36,4 @@ export async function generateUsernameAndAvatar({
   const avatar = await generateAvatar(theme, username);
   return { username, avatar };
 }
+export { generateAvatar };
