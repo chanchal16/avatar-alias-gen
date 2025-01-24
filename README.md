@@ -1,4 +1,4 @@
-# Randomize-it: Username and Avatar Generator
+# Randomize-it-js: Username and Avatar Generator
 A lightweight library for generating random usernames and avatars, inspired by Reddit-style naming conventions. This library is customizable, supports multiple themes, and includes avatar generation using the DiceBear API.
 
 ### Demo
@@ -21,7 +21,7 @@ npm i randomize-it
 ## Usage
 ### Basic example
 ```javascript
-import { generateUsernameAndAvatar } from 'randomize-it';
+import { generateUsernameAndAvatar } from 'randomize-it-js';
 
 async function generateUser() {
   const { username, avatar } = await generateUsernameAndAvatar("classic");
@@ -34,15 +34,28 @@ generateUser();
 
 ### React
 ```javascript
-import React from 'react';
-import { generateUsernameAndAvatar } from 'randomize-it';
+import React,{useState} from 'react';
+import { generateUsernameAndAvatar } from 'randomize-it-js';
 
 const App = () => {
-  const {username, avatarUrl} = generateUsernameAndAvatar('classic);
+   const [result, setResult] = useState<{
+    username: string;
+    avatar: string;
+  } | null>({
+    username: "",
+    avatar: "",
+  });
+
+  const generateUser = async () => {
+    const data = await generateUsernameAndAvatar({
+      theme:'classic',
+    });
+    setResult(data);
+  };
   return (
     <div>
       <h1>{username}</h1>
-      <img src={avatarUrl} alt="User Avatar" />
+      <img src={avatar} alt="User Avatar" />
     </div>
   );
 };
@@ -53,7 +66,7 @@ export default App;
 ### Angular
 ```javascript
 import { Component, OnInit } from '@angular/core';
-import { generateUsernameAndAvatar, generateAvatar } from 'randomize-it';
+import { generateUsernameAndAvatar } from 'randomize-it-js';
 
 @Component({
   selector: 'app-root',
@@ -70,8 +83,14 @@ export class AppComponent implements OnInit {
   avatarUrl: string = '';
 
   ngOnInit() {
-    this.username = generateUsernameAndAvatar();
-    this.avatarUrl = generateAvatar('classic', this.username);
+    generateUsernameAndAvatar({ theme: 'classic' }) 
+      .then(result => {
+        this.username = result.username;
+        this.avatarUrl = result.avatar;
+      })
+      .catch(error => {
+        console.error('Error generating username and avatar:', error);
+      });
   }
 }
 
@@ -88,4 +107,4 @@ export class AppComponent implements OnInit {
 - Description: Generates an avatar URL based on the selected theme and username.
 - Parameters:
   - theme: One of classic, emotional, elemental, tech.
-  - username: The username to generate the avatar for.                                                                                            |
+  - username: The username to generate the avatar for.                                                                             
