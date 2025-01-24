@@ -1,0 +1,67 @@
+.demo-container {
+  padding: 1rem;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.border {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 100%;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.select-item {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 18px;
+  outline: none !important;
+}
+
+.button {
+  background-color: #00122e;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  display: block;
+}
+.button:hover {
+  background-color: rgba(0, 18, 46, 0.8);
+}
+
+.username-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+.username-box p {
+  margin: 0;
+}
+
+img {
+  height: 24px;
+}
+
+.copy-btn {
+  height: 2rem;
+  align-self: end;
+  margin-left: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.avatar-box {
+  display: inline-flex;
+  gap: 1rem;
+}
