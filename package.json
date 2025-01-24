@@ -1,7 +1,7 @@
 {
-  "name": "randomize-it",
+  "name": "randomize-it-js",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A random username and avatar generator with multiple themes.",
   "keywords": [
     "username",
