@@ -27,7 +27,7 @@ export async function generateUsernameAndAvatar({
       username = generateClassicUsername();
   }
   if (separator) {
-    username = username.replace(/([A-Z])/g, "_$1").toLowerCase();
+    username = username.replace(/([a-z])([A-Z])/g, "$1_$2").toLowerCase();
   }
 
   username = username.toLowerCase();
