@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/main.ts",
-      name: "randomizeit",
-      fileName: (format) => `randomize-it.${format}.js`,
+      name: "avataraliasgen",
+      fileName: (format) => `avatar-alias-gen.${format}.js`,
     },
     rollupOptions: {
       external: [], // Add any external dependencies here
