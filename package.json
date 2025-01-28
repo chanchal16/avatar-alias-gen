@@ -1,7 +1,7 @@
 {
-  "name": "randomize-it-js",
+  "name": "avatar-alias-gen",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A random username and avatar generator with multiple themes.",
   "keywords": [
     "username",
@@ -11,8 +11,8 @@
     "random"
   ],
   "author": "Chanchal Rajput",
-  "main": "dist/randomize-it.umd.js",
-  "module": "dist/randomize-it.es.js",
+  "main": "dist/avatar-alias-gen.umd.js",
+  "module": "dist/avatar-alias-gen.es.js",
   "types": "dist/main.d.ts",
   "type": "module",
   "files": [
@@ -29,9 +29,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chanchal16/randomize-it"
+    "url": "https://github.com/chanchal16/avatar-alias-gen"
   },
-  "homepage": "https://github.com/chanchal16/randomize-it#readme",
+  "homepage": "https://github.com/chanchal16/avatar-alias-gen#readme",
   "devDependencies": {
     "@types/node": "^22.10.7",
     "@vitest/ui": "^3.0.3",
