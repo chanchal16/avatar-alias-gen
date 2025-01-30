@@ -1,8 +1,10 @@
 import Notify from "simple-notify";
+import "simple-notify/dist/simple-notify.css";
 import {
   IconCopy,
   IconSquareLetterS,
   IconSquareLetterSFilled,
+  IconRefresh,
 } from "@tabler/icons-react";
 
 const Output = ({
@@ -74,6 +76,11 @@ const Output = ({
           </button>
         </span>
         <button className="regenerate-button" onClick={onRegenerate}>
+          <IconRefresh
+            style={{ verticalAlign: "middle" }}
+            size={18}
+            color="white"
+          />{" "}
           Regenerate
         </button>
       </div>
