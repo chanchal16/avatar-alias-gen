@@ -2,7 +2,7 @@ const ThemeShowcase = ({ onSelectTheme }: any) => {
   const themes = [
     {
       name: "Classic",
-      description: "Timeless and simple usernames and avatars.",
+      description: "Traditional Reddit-style usernames",
     },
     { name: "Emotional", description: "Expressive and mood-based identities." },
     { name: "Elemental", description: "Inspired by nature and the elements." },
@@ -11,7 +11,7 @@ const ThemeShowcase = ({ onSelectTheme }: any) => {
 
   return (
     <section className="theme-showcase">
-      <h2 style={{ fontSize: "32px" }}>Explore Themes</h2>
+      <h2 className="theme-heading">Explore Themes</h2>
       <div className="theme-cards">
         {themes.map((theme, index) => (
           <div key={index} className="theme-card">
