@@ -98,7 +98,7 @@ body {
 }
 
 .output h2 {
-  color: #1da1f2; /* Twitter blue */
+  color: #14171a;
   margin-bottom: 1.5rem;
 }
 
@@ -200,7 +200,7 @@ body {
   padding: 1rem;
   margin: 1rem;
   border-radius: 5px;
-  width: 280px;
+  width: 250px;
   text-align: center;
   border: 1.5px solid #a4d8f2; /* Light blue border */
 }
