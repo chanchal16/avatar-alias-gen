@@ -34,16 +34,15 @@ const App = () => {
     <div className="App">
       <Header />
       <Hero onGenerate={generate} setTheme={setTheme} theme={theme} />
-      {/* {username ||
-        (avatar && ( */}
-          <Output
-            username={username}
-            avatar={avatar}
-            setIsSeparatorEnabled={setIsSeparatorEnabled}
-            isSeparatorEnabled={isSeparatorEnabled}
-            onRegenerate={handleRegenerate}
-          />
-        {/* ))} */}
+      {username && avatar && (
+        <Output
+          username={username}
+          avatar={avatar}
+          setIsSeparatorEnabled={setIsSeparatorEnabled}
+          isSeparatorEnabled={isSeparatorEnabled}
+          onRegenerate={handleRegenerate}
+        />
+      )}
       <ThemeShowcase onSelectTheme={generate} />
       <About />
       <Footer />
