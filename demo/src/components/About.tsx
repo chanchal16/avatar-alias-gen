@@ -38,21 +38,21 @@ const About = () => {
       </p>
       <div className="examples">
         <a
-          href="https://codesandbox.io/s/randomgen-react-example"
+          href="https://codesandbox.io/p/sandbox/react-example-m5x6dr"
           target="_blank"
           rel="noopener noreferrer"
         >
           React Example
         </a>
         <a
-          href="https://codesandbox.io/s/randomgen-vue-example"
+          href="https://codesandbox.io/p/devbox/vue-example-r3lzv5"
           target="_blank"
           rel="noopener noreferrer"
         >
           Vue Example
         </a>
         <a
-          href="https://codesandbox.io/s/randomgen-angular-example"
+          href="https://codesandbox.io/p/devbox/anglar-example-1-z3vlnd"
           target="_blank"
           rel="noopener noreferrer"
         >
