@@ -9,6 +9,12 @@ const ThemeShowcase = ({ onSelectTheme }: any) => {
     { name: "Tech", description: "Futuristic and tech-inspired usernames." },
   ];
 
+  const applyTheme = (theme: string) => {
+    const output = document.querySelector("#output");
+    output?.scrollIntoView({ behavior: "smooth", block: "start" });
+    onSelectTheme(theme.toLowerCase());
+  };
+
   return (
     <section className="theme-showcase">
       <h2 className="theme-heading">Explore Themes</h2>
@@ -17,7 +23,7 @@ const ThemeShowcase = ({ onSelectTheme }: any) => {
           <div key={index} className="theme-card">
             <h3>{theme.name}</h3>
             <p>{theme.description}</p>
-            <button onClick={() => onSelectTheme(theme.name.toLowerCase())}>
+            <button onClick={() => applyTheme(theme.name)}>
               Try This Theme
             </button>
           </div>

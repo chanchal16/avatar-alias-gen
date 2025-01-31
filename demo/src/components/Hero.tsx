@@ -1,5 +1,8 @@
 const Hero = ({ onGenerate, setTheme, theme }: any) => {
   const handleGenerate = () => {
+    document
+      .querySelector("#output")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
     onGenerate(theme);
   };
 
