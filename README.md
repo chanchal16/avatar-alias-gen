@@ -2,7 +2,7 @@
 A lightweight library for generating random usernames and avatars, inspired by Reddit-style naming conventions. This library is customizable, supports multiple themes, and includes avatar generation using the DiceBear API.
 
 ### Demo
-<a href="https://randomize-it.vercel.app/" target="_blank">View Demo</a>
+<a href="https://avatar-alias-gen.vercel.app/" target="_blank">View Demo</a>
 
 ### NPM Package
 <a href="https://www.npmjs.com/package/avatar-alias-gen" target="_blank">View on NPM</a>
@@ -74,7 +74,7 @@ export default App;
 ```
 
 ### Angular
-[Example on codesandbox](https://codesandbox.io/p/devbox/angular-example-xmkywx)
+[Example on codesandbox](https://codesandbox.io/p/devbox/anglar-example-1-z3vlnd)
 ```javascript
 import { Component, OnInit } from '@angular/core';
 import { generateUsernameAndAvatar } from 'avatar-alias-gen';
