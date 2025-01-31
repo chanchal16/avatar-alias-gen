@@ -18,15 +18,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   background-color: #03446a; /* Twitter blue */
   color: white;
+}
+
+.logo {
+  height: 28px;
 }
 
 .nav a {
   color: white;
   margin: 0 1rem;
   text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration-line: underline;
+  text-decoration-style: double;
 }
 
 .hero {
@@ -47,10 +56,7 @@ body {
 .theme-selector button {
   margin: 0.5rem;
   padding: 0.5rem 1rem;
-
   border-radius: 5px;
-  /* Dark blue */
-  /* color: white; */
   cursor: pointer;
 }
 
@@ -61,7 +67,6 @@ body {
 }
 
 .selected-theme {
-  /* background-color: #14171a; */
   border: 1.4px solid #03446a;
   color: #03446a;
 }
@@ -92,7 +97,6 @@ body {
 
 /* output section */
 .output {
-  text-align: center;
   padding: 2rem;
   background-color: #ffffff; /* White background */
 }
@@ -100,6 +104,12 @@ body {
 .output h2 {
   color: #14171a;
   margin-bottom: 1.5rem;
+}
+
+.output .theme-selected {
+  text-align: center !important;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .output-content {
@@ -221,8 +231,9 @@ body {
 .footer {
   text-align: center;
   padding: 1rem;
-  background-color: #14171a; /* Twitter blue */
+  background-color: #14171a;
   color: white;
+  margin-top: 1rem;
 }
 
 .footer-links a {
@@ -242,13 +253,12 @@ body {
   padding: 3rem 4rem;
   background-color: #ffffff; /* White background */
   color: #14171a; /* Dark gray text */
-  /* text-align: center; */
 }
 
 .about h2 {
-  color: #1da1f2; /* Twitter blue */
+  color: #14171a; /* Twitter blue */
   margin-bottom: 1rem;
-  /* text-align: center; */
+  font-size: 32px;
 }
 
 .about h3 {
@@ -275,4 +285,49 @@ body {
 
 .about ul li::marker {
   color: #1da1f2;
+}
+
+.about .example-desc {
+  margin: 0;
+}
+.examples {
+  margin: 12px 0;
+}
+.examples a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #1da1f2; /* Twitter blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.examples a:hover {
+  background-color: #0e7bb8; /* Dark blue on hover */
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.scroll-button {
+  background-color: #1da1f2; /* Twitter blue */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #0e7bb8; /* Dark blue on hover */
 }

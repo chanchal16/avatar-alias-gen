@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import "./App.css";
 import { generateUsernameAndAvatar } from "avatar-alias-gen";
 import About from "./components/About";
+import ScrollToTop from "./components/ScrollToTop";
 
 type Theme = "classic" | "emotional" | "elemental" | "tech";
 
@@ -38,6 +39,7 @@ const App = () => {
         <Output
           username={username}
           avatar={avatar}
+          theme={theme}
           setIsSeparatorEnabled={setIsSeparatorEnabled}
           isSeparatorEnabled={isSeparatorEnabled}
           onRegenerate={handleRegenerate}
@@ -46,6 +48,7 @@ const App = () => {
       <ThemeShowcase onSelectTheme={generate} />
       <About />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

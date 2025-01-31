@@ -10,6 +10,7 @@ import {
 const Output = ({
   username,
   avatar,
+  theme,
   onRegenerate,
   isSeparatorEnabled,
   setIsSeparatorEnabled,
@@ -36,8 +37,13 @@ const Output = ({
     }
   }
   return (
-    <section className="output">
-      <h2>Your Generated Identity</h2>
+    <section id="output" className="output">
+      <h2 style={{ padding: "0 2rem", fontSize: "32px" }}>
+        Your Generated Identity
+      </h2>
+      <p className="theme-selected">
+        Theme: <span style={{ color: "#03446a" }}>{theme}</span>{" "}
+      </p>
       <div className="output-content">
         {avatar && (
           <div className="avatar-container">
